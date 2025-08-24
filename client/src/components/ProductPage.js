@@ -3,6 +3,8 @@ import PlantList from './PlantList';
 import FilterControls from './FilterControls';
 
 const ProductPage = () => {
+  console.log('The API URL my app is using is:', process.env.REACT_APP_API_URL); // <-- ADD THIS LINE
+
   const [plants, setPlants] = useState([]);
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
