@@ -11,13 +11,13 @@
   align-items: center;
 }
 
-.nav-links { /* ADD THIS WRAPPER STYLE */
+.nav-links { 
   display: flex;
   align-items: center;
   gap: 25px;
 }
 
-.admin-link { /* ADD THIS STYLE */
+.admin-link { 
   text-decoration: none;
   color: #4a5568;
   font-weight: 500;

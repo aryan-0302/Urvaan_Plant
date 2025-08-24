@@ -4,7 +4,7 @@ import { CartProvider } from './context/CartContext';
 import Header from './components/Header';
 import ProductPage from './components/ProductPage';
 import Cart from './components/Cart';
-import AddPlantForm from './components/AddPlantForm'; // Import the new form
+import AddPlantForm from './components/AddPlantForm'; 
 import './App.css';
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
           <Routes>
             <Route path="/" element={<ProductPage />} />
             <Route path="/cart" element={<Cart />} />
-            <Route path="/admin/add" element={<AddPlantForm />} /> {/* ADD THIS ROUTE */}
+            <Route path="/admin/add" element={<AddPlantForm />} /> 
           </Routes>
         </main>
       </Router>

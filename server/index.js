@@ -43,10 +43,9 @@ const Notification = mongoose.model('Notification', notificationSchema);
 app.get('/api/plants', async (req, res) => {
   console.log('GET /api/plants request received'); 
   try {
-    const { search, category, sort } = req.query; // Add sort
+    const { search, category, sort } = req.query;
     let query = {};
 
-    // ... searchFilter and categoryFilter logic remains the same ...
     const searchFilter = search ? {
       $or: [
         { name: { $regex: search, $options: 'i' } },
@@ -95,7 +94,7 @@ app.get('/api/plants', async (req, res) => {
 
 
 
-// POST /api/plants - Add a new plant (Admin Feature)
+// POST /api/plants - Add a new plant
 app.post('/api/plants', async (req, res) => {
   console.log('POST /api/plants request received with body:', req.body); 
   try {
@@ -136,7 +135,6 @@ app.post('/api/notifications', async (req, res) => {
       return res.status(400).json({ message: 'Email and Plant ID are required.' });
     }
 
-    // Optional: Check if this email has already requested notification for this plant
     const existing = await Notification.findOne({ email, plantId });
     if (existing) {
       return res.status(200).json({ message: 'You are already on the notification list for this plant.' });

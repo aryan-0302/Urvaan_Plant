@@ -9,7 +9,7 @@ const ProductPage = () => {
   const [error, setError] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
-  const [sortOption, setSortOption] = useState('default'); // Add sort state
+  const [sortOption, setSortOption] = useState('default'); 
 
   const fetchPlants = useCallback(async () => {
     setLoading(true);
@@ -18,7 +18,7 @@ const ProductPage = () => {
       const params = new URLSearchParams();
       if (searchQuery) params.append('search', searchQuery);
       if (selectedCategory !== 'All') params.append('category', selectedCategory);
-      if (sortOption !== 'default') params.append('sort', sortOption); // Add sort to params
+      if (sortOption !== 'default') params.append('sort', sortOption);
       
       const response = await fetch(`/api/plants?${params.toString()}`);
       if (!response.ok) throw new Error('Network response was not ok');
@@ -29,13 +29,12 @@ const ProductPage = () => {
     } finally {
       setLoading(false);
     }
-  }, [searchQuery, selectedCategory, sortOption]); // Add sortOption to dependencies
+  }, [searchQuery, selectedCategory, sortOption]); 
 
   useEffect(() => {
     fetchPlants();
   }, [fetchPlants]);
 
-  // ... fetchCategories useEffect remains the same ...
   useEffect(() => {
     const fetchCategories = async () => {
       try {
@@ -58,8 +57,8 @@ const ProductPage = () => {
         setSearchQuery={setSearchQuery}
         selectedCategory={selectedCategory}
         setSelectedCategory={setSelectedCategory}
-        sortOption={sortOption} // Pass sort state down
-        setSortOption={setSortOption} // Pass setter down
+        sortOption={sortOption}
+        setSortOption={setSortOption} 
       />
       <PlantList plants={plants} loading={loading} error={error} />
     </>

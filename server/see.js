@@ -56,7 +56,6 @@ const plantData = [
     { name: "Petunia Plant", price: 99, categories: ["Outdoor", "Flowering"], available: true, imageUrl: "https://placehold.co/600x400/a2d2ba/2c5b4c?text=Petunia", description: "A popular choice for hanging baskets and containers.", careLevel: "Easy" }
 ];
 
-// IMPORTANT: Make sure this schema matches the one in index.js
 const Plant = mongoose.model('Plant', new mongoose.Schema({
     name: { type: String, required: true },
     price: { type: Number, required: true },

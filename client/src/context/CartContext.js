@@ -25,7 +25,7 @@ export const CartProvider = ({ children }) => {
     setCartItems(prevItems =>
       prevItems.map(item =>
         item._id === plantId ? { ...item, quantity: Math.max(0, quantity) } : item
-      ).filter(item => item.quantity > 0) // Remove if quantity is 0
+      ).filter(item => item.quantity > 0)
     );
   };
 

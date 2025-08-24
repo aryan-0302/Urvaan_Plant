@@ -1,10 +1,10 @@
 import React, { useContext, useState } from 'react';
 import { CartContext } from '../context/CartContext';
-import NotifyModal from './NotifyModal'; // Import the modal
+import NotifyModal from './NotifyModal'; 
 
 const PlantCard = ({ plant, index }) => {
   const { addToCart } = useContext(CartContext);
-  const [isModalOpen, setIsModalOpen] = useState(false); // State for modal
+  const [isModalOpen, setIsModalOpen] = useState(false); 
 
   const fontClasses = ['font-poppins', 'font-lora', 'font-roboto-slab'];
   const fontClass = fontClasses[index % fontClasses.length];

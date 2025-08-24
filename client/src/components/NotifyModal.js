@@ -25,7 +25,7 @@ const NotifyModal = ({ plantName, plantId, onClose }) => {
       const result = await response.json();
       if (!response.ok) throw new Error(result.message);
       setMessage(result.message);
-      setTimeout(() => onClose(), 2000); // Close modal after 2 seconds
+      setTimeout(() => onClose(), 2000); 
     } catch (err) {
       setError(err.message || 'An error occurred.');
     }

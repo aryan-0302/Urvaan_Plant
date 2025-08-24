@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './AddPlantForm.css'; // We will create this CSS file
+import './AddPlantForm.css'; 
 
 const AddPlantForm = () => {
   const [formData, setFormData] = useState({
@@ -27,7 +27,6 @@ const AddPlantForm = () => {
     setError('');
     setMessage('');
 
-    // Frontend Validation
     if (!formData.name || !formData.price || !formData.categories) {
       setError('Name, Price, and Categories are required.');
       return;
@@ -36,7 +35,7 @@ const AddPlantForm = () => {
     const plantData = {
       ...formData,
       price: Number(formData.price),
-      categories: formData.categories.split(',').map(cat => cat.trim()), // Convert comma-separated string to array
+      categories: formData.categories.split(',').map(cat => cat.trim()), 
     };
 
     try {
@@ -53,7 +52,6 @@ const AddPlantForm = () => {
       }
 
       setMessage(`Successfully added ${result.name}!`);
-      // Reset form
       setFormData({
         name: '', price: '', categories: '', available: true,
         imageUrl: '', description: '', careLevel: 'Easy',
