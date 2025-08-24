@@ -39,7 +39,8 @@ const AddPlantForm = () => {
     };
 
     try {
-      const response = await fetch('/api/plants', {
+      const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+      const response = await fetch(`${apiUrl}/api/plants`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(plantData),

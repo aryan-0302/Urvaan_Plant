@@ -11,7 +11,7 @@ const ProductPage = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [sortOption, setSortOption] = useState('default'); 
 
-  const fetchPlants = useCallback(async () => {
+   const fetchPlants = useCallback(async () => {
     setLoading(true);
     setError(null);
     try {
@@ -20,7 +20,8 @@ const ProductPage = () => {
       if (selectedCategory !== 'All') params.append('category', selectedCategory);
       if (sortOption !== 'default') params.append('sort', sortOption);
       
-      const response = await fetch(`/api/plants?${params.toString()}`);
+      const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+      const response = await fetch(`${apiUrl}/api/plants?${params.toString()}`);
       if (!response.ok) throw new Error('Network response was not ok');
       const data = await response.json();
       setPlants(data);
@@ -38,7 +39,8 @@ const ProductPage = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await fetch('/api/plants');
+        const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+        const response = await fetch(`${apiUrl}/api/plants`);
         const data = await response.json();
         const uniqueCategories = [...new Set(data.flatMap(p => p.categories))];
         setCategories(uniqueCategories.sort());
