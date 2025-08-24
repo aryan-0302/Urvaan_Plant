@@ -8,8 +8,12 @@ import AddPlantForm from './components/AddPlantForm';
 import './App.css';
 
 function App() {
-  return (
-    
+  console.log("====== SPY CHECK START ======");
+  console.log("The API URL my app is using is:", process.env.REACT_APP_API_URL);
+  console.log("All ENV Vars (frontend):", process.env);
+  console.log("====== SPY CHECK END ======");
+
+  return (  
     <CartProvider>
       <Router>
         <Header />
