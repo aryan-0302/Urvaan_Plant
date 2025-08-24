@@ -1,0 +1,65 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 450px;
+  position: relative;
+  text-align: center;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #aaa;
+}
+
+.modal-content h3 {
+  margin-top: 0;
+  color: #2c5b4c;
+}
+
+.modal-content p {
+  margin-bottom: 20px;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.modal-content button {
+  width: 100%;
+  padding: 12px;
+  background-color: #2c5b4c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.success-message { color: #2f855a; margin-top: 15px; }
+.error-message { color: #e53e3e; margin-top: 15px; }
