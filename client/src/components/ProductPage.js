@@ -3,7 +3,10 @@ import PlantList from './PlantList';
 import FilterControls from './FilterControls';
 
 const ProductPage = () => {
-  console.log('The API URL my app is using is:', process.env.REACT_APP_API_URL); // <-- ADD THIS LINE
+  console.log("====== SPY CHECK START ======");
+  console.log("The API URL my app is using is:", process.env.REACT_APP_API_URL);
+  console.log("====== SPY CHECK END ======");
+
 
   const [plants, setPlants] = useState([]);
   const [categories, setCategories] = useState([]);

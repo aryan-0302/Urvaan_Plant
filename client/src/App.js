@@ -9,6 +9,7 @@ import './App.css';
 
 function App() {
   return (
+    
     <CartProvider>
       <Router>
         <Header />
